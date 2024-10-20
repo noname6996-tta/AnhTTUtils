@@ -34,6 +34,15 @@ android {
 }
 
 publishing {
+
+    repositories {
+        mavenLocal()  // Xuất bản vào Maven Local (publishToMavenLocal)
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/username/repo")
+        }
+    }
+
     publications {
         // Tạo bản phát hành cho MavenPublication
         create<MavenPublication>("release") {
